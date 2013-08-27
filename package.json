@@ -6,6 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "bin": {
+    "site-status": "./bin/site-status"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/riywo/site-status"
@@ -14,5 +17,18 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/riywo/site-status/issues"
+  },
+  "dependencies": {
+    "request": "~2.27.0",
+    "JSONPath": "~0.9.1",
+    "cheerio": "~0.12.1",
+    "toml": "~1.0.4",
+    "commander": "~2.0.0"
+  },
+  "devDependencies": {
+    "grunt-contrib-coffee": "~0.7.0",
+    "grunt-cli": "~0.1.9",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt": "~0.4.1"
   }
 }
