@@ -20,7 +20,7 @@ Response time of the HTTP request.
 
 Some sites have "status" value in their contents of the sites. `site-status` can scrape the value.
 
-**Currently only HTML and CSS selector.** JSONPath will be support soon.
+**Currently only HTML and CSS selector.** JSONPath will be supported soon.
 
 ## Installation
 
