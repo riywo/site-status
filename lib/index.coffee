@@ -16,16 +16,18 @@ normalizeStatusCode = (status) ->
   else
     return "***"
 
-run = (json, callback) ->
-  data = JSON.parse json
+run = (program, json, callback) ->
+  timeout = program.timeout
 
+  data = JSON.parse json
   site  = data.site
   url   = data.url
   stats = data.stats
 
   t1 = process.hrtime()
   request.get
-    url: url
+    url:     url
+    timeout: timeout
   , (error, res, body) ->
     t2 = process.hrtime()
 
