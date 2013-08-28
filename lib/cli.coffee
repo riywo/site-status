@@ -4,6 +4,7 @@ siteStatus = require './index'
 
 run = (argv) ->
   program
+    .version(require('../../package.json').version)
     .option('-t, --timeout <n>', 'Timeout (s)', parseInt)
     .parse(argv)
 
