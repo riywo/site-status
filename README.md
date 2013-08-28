@@ -6,6 +6,14 @@ Ping web sites and get status
 
 Like [pingdom](https://www.pingdom.com/) or [keynote](http://www.keynote.com/), `site-status` access some endpoints of web sites and gets the "Site Status".
 
+Example:
+
+    $ cat ./example/github.json
+    { "site": "github", "url": "https://status.github.com/", "stats": { "GitHub": { "selector": "div.service:nth-of-type(1) span.status", "type": "string" } , "App Server %": { "selector": "div.graph div.data:nth-of-type(1) span.number", "type": "numeric" } } }
+
+    $ cat ./example/github.json | site-status
+    {"site":"github","url":"https://status.github.com/","time":1100,"code":"200","stats":{"GitHub":"Normal","App Server %":100}}
+
 ## "Site Status"?
 
 ### status code
