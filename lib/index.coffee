@@ -46,7 +46,7 @@ run = (program, json, callback) ->
 
     if error
       result.error = error.code
-    else
+    else if stats
       $ = cheerio.load body
       result.stats = {}
       Object.keys(stats).forEach (key) ->
