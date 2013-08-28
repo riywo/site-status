@@ -28,7 +28,7 @@ Response time of the HTTP request.
 
 Some sites have "status" value in their contents of the sites. `site-status` can scrape the value.
 
-**Currently only HTML and CSS selector.** JSONPath will be support soon.
+**Currently only HTML and CSS selector.** JSONPath will be supported soon.
 
 ## Installation
 
@@ -109,13 +109,13 @@ pretty print:
 
     {
         "site": "github",
-        "url": "https://status.github.com/"
+        "url": "https://status.github.com/",
         "code": "200",
         "time": 912,
         "stats": {
             "App Server %": 100,
             "GitHub": "Normal"
-        },
+        }
     }
 
 ### help
