@@ -1,10 +1,9 @@
 {
   "name": "site-status",
   "description": "Ping web sites and get status",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "main": "./build/lib/index.js",
-  "scripts": {
-  },
+  "scripts": {},
   "bin": {
     "site-status": "./bin/site-status"
   },
