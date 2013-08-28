@@ -101,13 +101,13 @@ pretty print:
 
     {
         "site": "github",
-        "url": "https://status.github.com/"
+        "url": "https://status.github.com/",
         "code": "200",
         "time": 912,
         "stats": {
             "App Server %": 100,
             "GitHub": "Normal"
-        },
+        }
     }
 
 ### help
