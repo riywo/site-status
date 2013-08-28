@@ -6,7 +6,13 @@ msDiff = (t1, t2) ->
   mms = t2[1] - t1[1]
   return (s*1e9 + mms)/1000/1000
 
-normalizeStatusCode = (status) ->
+statusCode = (res) ->
+  status =
+    try
+      res.statusCode
+    catch
+      0
+
   if      200 <= status and status < 300
     return "200"
   else if 400 <= status and status < 500
@@ -35,16 +41,20 @@ run = (program, json, callback) ->
     result.site = site
     result.url  = url
     result.time = msDiff(t1, t2)
-    result.code = normalizeStatusCode(res.statusCode)
 
-    $ = cheerio.load body
-    result.stats = {}
-    Object.keys(stats).forEach (key) ->
-      value = $(stats[key]['selector']).text()
-      if      stats[key]['type'] == 'numeric'
-        result.stats[key] = parseFloat(value)
-      else if stats[key]['type'] == 'string'
-        result.stats[key] = value
+    result.code = statusCode(res)
+
+    if error
+      result.error = error.code
+    else
+      $ = cheerio.load body
+      result.stats = {}
+      Object.keys(stats).forEach (key) ->
+        value = $(stats[key]['selector']).text()
+        if      stats[key]['type'] == 'numeric'
+          result.stats[key] = parseFloat(value)
+        else if stats[key]['type'] == 'string'
+          result.stats[key] = value
 
     callback(result)
 
