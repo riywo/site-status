@@ -4,7 +4,7 @@ cheerio = require 'cheerio'
 msDiff = (t1, t2) ->
   s = t2[0] - t1[0]
   mms = t2[1] - t1[1]
-  return (s*1e9 + mms)/1000/1000
+  return (s*1e9 + mms)/1000/1000 | 0
 
 statusCode = (res) ->
   status =

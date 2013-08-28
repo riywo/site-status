@@ -7,7 +7,7 @@ defaultTimeout = 10000 # 10s
 run = (argv) ->
   program
     .version(require('../../package.json').version)
-    .option('-t, --timeout <n>', 'Timeout (s) default: ' + defaultTimeout, parseInt)
+    .option('-t, --timeout <n>', 'Timeout (ms) default: ' + defaultTimeout, parseInt)
     .parse(argv)
 
   program.timeout = program.timeout || defaultTimeout
