@@ -1,19 +1,23 @@
 {
   "name": "site-status",
+  "description": "Ping web sites and get status",
   "version": "0.0.0",
-  "description": "",
-  "main": "index.js",
+  "main": "./build/lib/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
     "site-status": "./bin/site-status"
   },
+  "preferGlobal": "true",
   "repository": {
     "type": "git",
-    "url": "https://github.com/riywo/site-status"
+    "url": "https://github.com/riywo/site-status.git"
   },
-  "author": "Ryosuke IWANAGA",
+  "author": {
+    "name": "Ryosuke IWANAGA",
+    "email": "riywo.jp@gmail.com",
+    "url": "http://weblog.riywo.com"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/riywo/site-status/issues"
